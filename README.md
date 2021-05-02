@@ -1,6 +1,8 @@
 # bases-next
 Repositório contendo arquivos, plugins e demais coisas que considero importantes para um projeto `ReactJS` feito com `Next.js`.
 
+**Obs.:** Para usar o eslint no terminal utilize `yarn eslint . --ext .js,.ts,.jsx,.tsx`
+
 ### Rocketseat "Como inicio meus apps com ReactJS? Next.js, TypeScript, ESLint e Styled Components | Code/Drops #50"
 Além de algumas regras de eslint que precisei adicionar.
 ```bash
@@ -48,4 +50,8 @@ yarn add babel-plugin-inline-react-svg -D
 
 mkdir src\styles\pages
 echo // > src\styles\pages\Home.ts
+```
+### Alterações iniciais
+```bash
+yarn add eslint-plugin-import-helpers -D
 ```

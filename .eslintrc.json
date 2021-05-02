@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true,
@@ -22,14 +23,17 @@
   "plugins": [
     "react",
     "@typescript-eslint",
-    "prettier"
+    "prettier",
+    "import-helpers"
   ],
   "rules": {
     "prettier/prettier": "error",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-use-before-define": [
+      "error"
+    ],
     "react/jsx-filename-extension": [
       "warn",
       {
@@ -52,7 +56,21 @@
       }
     ],
     "react/jsx-props-no-spreading": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "module",
+          [
+            "parent", "sibling", "index"
+          ]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
   },
   "settings": {
     "import/resolver": {

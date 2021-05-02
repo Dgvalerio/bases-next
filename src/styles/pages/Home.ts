@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import W78W7 from '../../assets/78W7.webp';
 
 export const Container = styled.div`
