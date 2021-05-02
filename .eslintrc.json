@@ -70,6 +70,14 @@
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "tron"
+        ]
+      }
     ]
   },
   "settings": {

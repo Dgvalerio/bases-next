@@ -52,6 +52,18 @@ mkdir src\styles\pages
 echo // > src\styles\pages\Home.ts
 ```
 ### Alterações iniciais
+
+#### eslintPluginImportHelpers
+Adicionando eslint-plugin-import-helpers para organizar as importações.
 ```bash
 yarn add eslint-plugin-import-helpers -D
+```
+
+#### Reactrotron
+Adicionando Reactoton.
+Isso deu um trabalho absurdo já que o Reactotron não funciona em SSR.
+```bash
+yarn add reactotron-react-js
+mkdir src\config
+echo // > src\config\ReactotronConfig.js
 ```
