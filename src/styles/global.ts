@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+ // Estilização global
+
   * {
     padding: 0;
     margin: 0;

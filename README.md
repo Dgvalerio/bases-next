@@ -65,5 +65,24 @@ Isso deu um trabalho absurdo já que o Reactotron não funciona em SSR.
 ```bash
 yarn add reactotron-react-js
 mkdir src\config
-echo // > src\config\ReactotronConfig.js
+echo // > src\config\ReactotronConfig.ts
+```
+
+#### Api Start
+Iniciando as instruções de API.
+```bash
+mkdir src\utils
+echo // > src\utils\interfaces.ts
+echo // > src\utils\routes.ts
+
+yarn add axios @vercel/node
+mkdir src\pages\api
+
+mkdir src\pages\api\users\
+echo // > src\pages\api\users\index.ts
+echo // > src\pages\api\users\create.ts
+mkdir src\pages\api\users\[id]
+echo // > src\pages\api\users\[id]\delete.ts
+echo // > src\pages\api\users\[id]\index.ts
+echo // > src\pages\api\users\[id]\update.ts
 ```

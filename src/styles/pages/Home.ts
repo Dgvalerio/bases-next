@@ -15,6 +15,9 @@ export const Container = styled.div`
 
   main {
     display: grid;
+    min-width: 80vw;
+    min-height: 100%;
+    height: 80vh;
     grid-template-columns: 28% 72%;
     border-radius: 0 8px 8px 0;
     background-color: #000;
@@ -22,10 +25,12 @@ export const Container = styled.div`
     .left {
       background: url(${W78W7});
       background-size: cover;
+      min-height: 100%;
     }
 
     .right {
-      padding: 128px;
+      align-self: center;
+      justify-self: center;
     }
   }
 
