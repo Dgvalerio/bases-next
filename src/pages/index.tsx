@@ -1,57 +1,58 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
-import axios from 'axios';
 import Head from 'next/head';
-import { mutate as globalMutate } from 'swr';
 
 import { useAxios } from '../hooks/useFetch';
 import { Container } from '../styles/pages/Home';
-import { UserModel } from '../utils/interfaces';
+import { RoomModel } from '../utils/interfaces';
 import { back } from '../utils/routes';
 
 const Home: React.FC = () => {
-  const { data: users, mutate } = useAxios<UserModel[]>(back.user.readAll());
+  const { data: residents } = useAxios<RoomModel[]>(back.room.readAll());
 
-  const handleNameChange = useCallback((id: number) => {
-    const updatedUsers = users?.map((user) => {
-      if (user.id === id) {
-        return { ...user, name: 'Davi' };
-      }
+  const handleNameChange = (id: number) => console.tron.log({ id });
 
-      return user;
-    });
-
-    axios
-      .put(back.user.update(id), { name: 'Davi' })
-      .then((updateOne) => console.tron.log({ update: updateOne.data }));
-
-    mutate(updatedUsers, false);
-    globalMutate(back.user.update(id), { id, name: 'Davi' });
-  }, []);
-
-  if (!users) {
+  if (!residents) {
     return <h1>loading...</h1>;
   }
 
   return (
     <Container>
       <Head>
-        <title>Início</title>
+        <title>Castle Monitor</title>
       </Head>
 
       <main>
         <div className="left" />
         <div className="right">
-          <h1>Estrutura Next.js</h1>
-          <p>Uma estrutura de projeto com ReactJS + Next.js.</p>
-          {users.map((user) => (
-            <p key={user.id}>
-              [{user.id}] {user.name}
-            </p>
-          ))}
-          <button onClick={() => handleNameChange(2)} type="button">
-            handleNameChange
-          </button>
+          <h1>Castle Monitor</h1>
+          <h3>Rooms</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>level</th>
+                <th>capacity</th>
+                <th>-</th>
+              </tr>
+            </thead>
+            <tbody>
+              {residents.map((user) => (
+                <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td>{user.name}</td>
+                  <td>{user.level}</td>
+                  <td>{user.capacity}</td>
+                  <td>
+                    <button onClick={() => handleNameChange(2)} type="button">
+                      handleNameChange
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </main>
     </Container>

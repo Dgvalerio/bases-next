@@ -18,7 +18,7 @@ export const Container = styled.div`
     min-width: 80vw;
     min-height: 100%;
     height: 80vh;
-    grid-template-columns: 28% 72%;
+    grid-template-columns: 20% 80%;
     border-radius: 0 8px 8px 0;
     background-color: #000;
 
@@ -29,8 +29,8 @@ export const Container = styled.div`
     }
 
     .right {
-      align-self: center;
-      justify-self: center;
+      text-align: center;
+      padding: 32px;
     }
   }
 
@@ -44,17 +44,35 @@ export const Container = styled.div`
     line-height: 32px;
   }
 
+  table {
+    min-width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    border-collapse: separate;
+
+    th,
+    td {
+      margin: 4px;
+      text-align: center;
+      align-items: center;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  }
+
   button {
-    margin-top: 16px;
-    padding: 8px 16px;
-    background-color: #fff;
-    color: black;
+    margin: 0;
+    padding: 12px 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+    color: white;
     border-radius: 8px;
     border: none;
     cursor: pointer;
+    width: 100%;
 
     &:hover {
-      opacity: 0.8;
+      background-color: rgba(255, 255, 255, 0.2);
     }
   }
 `;

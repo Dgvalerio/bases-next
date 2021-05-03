@@ -94,16 +94,11 @@ mkdir src\hooks
 echo // > src\hooks\useFetch.ts
 
 yarn add swr
+```
 
-echo // > src\utils\routes.ts
+#### Castle
+Mesclando com o back do Castle Monitor, aí posso usar alguns dados de forma mais úlil, além de ver funcionando realmente.
+Lembrando que ainda não parei para definir um visual legal.
+```bash
 
-mkdir src\pages\api
-
-mkdir src\pages\api\users\
-echo // > src\pages\api\users\index.ts
-echo // > src\pages\api\users\create.ts
-mkdir src\pages\api\users\[id]
-echo // > src\pages\api\users\[id]\delete.ts
-echo // > src\pages\api\users\[id]\index.ts
-echo // > src\pages\api\users\[id]\update.ts
 ```
