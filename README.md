@@ -67,3 +67,12 @@ yarn add reactotron-react-js
 mkdir src\config
 echo // > src\config\ReactotronConfig.js
 ```
+
+#### chakra-ui
+Iniciando configurações do Chakra-Ui
+```bash
+yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+
+mkdir src\styles
+echo // > src\styles\theme.ts
+```

@@ -2,10 +2,10 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import { Container } from '../styles/pages/Home';
+// import { Container } from '../styles/pages/Home';
 
 const Home: React.FC = () => (
-  <Container>
+  <>
     <Head>
       <title>Início</title>
     </Head>
@@ -17,7 +17,7 @@ const Home: React.FC = () => (
         <p>Uma estrutura de projeto com ReactJS + Next.js.</p>
       </div>
     </main>
-  </Container>
+  </>
 );
 
 export default Home;
