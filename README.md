@@ -86,3 +86,24 @@ echo // > src\pages\api\users\[id]\delete.ts
 echo // > src\pages\api\users\[id]\index.ts
 echo // > src\pages\api\users\[id]\update.ts
 ```
+
+#### SWR - Code/Drops #38
+Adicionando SWR e configurando conforme o Code/Drops #38.
+```bash
+mkdir src\hooks
+echo // > src\hooks\useFetch.ts
+
+yarn add swr
+
+echo // > src\utils\routes.ts
+
+mkdir src\pages\api
+
+mkdir src\pages\api\users\
+echo // > src\pages\api\users\index.ts
+echo // > src\pages\api\users\create.ts
+mkdir src\pages\api\users\[id]
+echo // > src\pages\api\users\[id]\delete.ts
+echo // > src\pages\api\users\[id]\index.ts
+echo // > src\pages\api\users\[id]\update.ts
+```

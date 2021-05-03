@@ -1,34 +1,37 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 
 import axios from 'axios';
 import Head from 'next/head';
+import { mutate as globalMutate } from 'swr';
 
+import { useAxios } from '../hooks/useFetch';
 import { Container } from '../styles/pages/Home';
 import { UserModel } from '../utils/interfaces';
 import { back } from '../utils/routes';
 
 const Home: React.FC = () => {
-  const [users, setUsers] = useState<UserModel[]>([]);
+  const { data: users, mutate } = useAxios<UserModel[]>(back.user.readAll());
 
-  useEffect(() => {
-    axios.get(back.user.readAll()).then((res) => setUsers(res.data));
+  const handleNameChange = useCallback((id: number) => {
+    const updatedUsers = users?.map((user) => {
+      if (user.id === id) {
+        return { ...user, name: 'Davi' };
+      }
+
+      return user;
+    });
 
     axios
-      .post(back.user.create(), { name: 'Davi' })
-      .then((createOne) => console.tron.log({ createOne }));
-    axios
-      .get(back.user.readOne(1))
-      .then((readOne) => console.tron.log({ readOne }));
-    axios
-      .get(back.user.readAll())
-      .then((readAll) => console.tron.log({ readAll }));
-    axios
-      .put(back.user.update(2), { name: 'Davi' })
-      .then((updateOne) => console.tron.log({ updateOne }));
-    axios
-      .delete(back.user.delete(3))
-      .then((deleteOne) => console.tron.log({ deleteOne }));
+      .put(back.user.update(id), { name: 'Davi' })
+      .then((updateOne) => console.tron.log({ update: updateOne.data }));
+
+    mutate(updatedUsers, false);
+    globalMutate(back.user.update(id), { id, name: 'Davi' });
   }, []);
+
+  if (!users) {
+    return <h1>loading...</h1>;
+  }
 
   return (
     <Container>
@@ -46,6 +49,9 @@ const Home: React.FC = () => {
               [{user.id}] {user.name}
             </p>
           ))}
+          <button onClick={() => handleNameChange(2)} type="button">
+            handleNameChange
+          </button>
         </div>
       </main>
     </Container>

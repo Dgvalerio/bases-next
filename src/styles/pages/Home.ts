@@ -43,4 +43,18 @@ export const Container = styled.div`
     margin-top: 24px;
     line-height: 32px;
   }
+
+  button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #fff;
+    color: black;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `;
