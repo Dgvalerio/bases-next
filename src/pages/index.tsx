@@ -2,13 +2,18 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import { useAxios } from '../hooks/useFetch';
+import { useAxios } from '../hooks/useAxios';
 import { Container } from '../styles/pages/Home';
 import { RoomModel } from '../utils/interfaces';
 import { back } from '../utils/routes';
 
 const Home: React.FC = () => {
-  const { data: residents } = useAxios<RoomModel[]>(back.room.readAll());
+  const { data: residents } = useAxios<RoomModel[]>(
+    {
+      url: back.room.readAll(),
+    },
+    []
+  );
 
   const handleNameChange = (id: number) => console.tron.log({ id });
 
