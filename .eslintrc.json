@@ -27,6 +27,7 @@
     "import-helpers"
   ],
   "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
     "prettier/prettier": "error",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
@@ -69,14 +70,6 @@
           ]
         ],
         "alphabetize": { "order": "asc", "ignoreCase": true }
-      }
-    ],
-    "no-console": [
-      "error",
-      {
-        "allow": [
-          "tron"
-        ]
       }
     ]
   },

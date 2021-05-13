@@ -99,6 +99,15 @@ yarn add swr
 #### Castle
 Mesclando com o back do Castle Monitor, aí posso usar alguns dados de forma mais úlil, além de ver funcionando realmente.
 Lembrando que ainda não parei para definir um visual legal.
-```bash
 
+#### Supabase
+Implementando Supabase e estilizando com o básico.
+```bash
+yarn add @supabase/supabase-js @supabase/ui
+mkdir src\components
+echo // > src\components\index.tsx
+echo // > src\components\Input.tsx
+echo // > src\config\supabase.ts
+echo // > src\utils\db.ts
+echo // > src\utils\index.ts
 ```

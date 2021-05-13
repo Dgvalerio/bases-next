@@ -9,6 +9,8 @@
     "checklint": "yarn eslint . --ext .js,.ts,.jsx,.tsx"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.11.10",
+    "@supabase/ui": "^0.24.3",
     "@vercel/node": "^1.10.0",
     "axios": "^0.21.1",
     "next": "10.2.0",

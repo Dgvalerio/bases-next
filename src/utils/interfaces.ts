@@ -1,6 +1,6 @@
 // Room
 export interface RoomModel {
-  id: string;
+  id?: number;
   name: string;
   level: number;
   capacity: number;
@@ -8,16 +8,16 @@ export interface RoomModel {
 
 // Resident
 export interface ResidentModel {
-  id: number;
+  id?: number;
   name: string;
   genre: 'male' | 'female';
   stars: number;
-  room: RoomModel;
+  room: RoomModel | number;
 }
 
 // Skill
 export interface SkillModel {
-  id: number;
+  id?: number;
   material: string;
   maxLevel: number;
   title: string;
@@ -25,7 +25,7 @@ export interface SkillModel {
 
 // SkillResident
 export interface ResidentSkillModel {
-  resident: ResidentModel;
-  skill: SkillModel;
+  resident: ResidentModel | number;
+  skill: SkillModel | number;
   level: number;
 }
