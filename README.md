@@ -111,3 +111,6 @@ echo // > src\config\supabase.ts
 echo // > src\utils\db.ts
 echo // > src\utils\index.ts
 ```
+
+### Designs
+Uma telinha de gadrientes do Instagram e uma idea de design de https://dribbble.com/shots/4239892.

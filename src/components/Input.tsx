@@ -31,6 +31,7 @@ interface InputProps {
   value: any;
   onChange: ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
   label: string;
+  placeHolder?: string;
   options?: { value: string | number; text: string }[];
 }
 
@@ -41,6 +42,7 @@ export const Input = ({
   onChange,
   label,
   options,
+  placeHolder,
 }: InputProps): JSX.Element => {
   const [input, setInput] = useState(value);
 
@@ -71,6 +73,7 @@ export const Input = ({
             setInput(e.target.value);
             onChange(e);
           }}
+          placeholder={placeHolder || ''}
         />
       )}
     </label>
